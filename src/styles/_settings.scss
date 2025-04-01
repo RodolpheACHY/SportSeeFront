@@ -1,0 +1,44 @@
+// colors
+$primary-color: #FF6060;
+$secondary-color: #FFFFFF;
+$black: #000;
+$cards-container-background-color: #F6F6F6;
+
+// font-weight
+$font-weight-regular: 500;
+$font-weight-bold: 700;
+
+// font-size
+$font-size-h1: 48px;
+$font-size-h2: 36px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-h5: 14px;
+$font-size-h6: 12px;
+$font-size-body: 10px;
+
+// media queries
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1280px;
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mobile et tablette (jusqu'à 1024px)
+@mixin mobile-and-tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+// Desktop uniquement (à partir de 1024px)
+$breakpoint-tablet-plus-one: $breakpoint-tablet + 1;
+@mixin desktop {
+  @media (min-width: $breakpoint-tablet-plus-one) {
+    @content;
+  }
+}

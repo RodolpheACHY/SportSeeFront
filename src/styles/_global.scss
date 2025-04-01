@@ -1,0 +1,13 @@
+@use './settings';
+
+#root {
+    margin: 0 auto;
+    text-align: center; 
+    max-width: 1440px;
+
+    @media (max-width: settings.$breakpoint-tablet) {
+        padding: 0;
+    }
+} 
+
+ 

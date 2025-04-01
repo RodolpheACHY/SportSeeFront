@@ -1,0 +1,24 @@
+@use "./settings" ;
+@use "./global";
+
+:root {
+    --main-font: 'Montserrat', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    //outline: 1px solid red;
+}
+
+body {
+    background: settings.$secondary-color;
+    font-family: var(--main-font);
+    overflow-x: hidden;
+}
+
+li {
+    list-style-type: none;
+}
+  
