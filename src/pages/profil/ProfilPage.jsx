@@ -7,17 +7,9 @@ import backgroundImage from '/backgroundHero.png'
 
 const Profil= ({data}) => {
   return (
-    <div>
-      <Header />
-      <Hero
-        backgroundImage={backgroundImage}
-        text="Chez vous, partout et ailleurs"
-      />
-      <main>
-        <Locations locations={data} />
-      </main>
-      <Footer />
-    </div>
+    <Layout>
+      contenu de la page profil
+    </Layout>
   );
 };
 
