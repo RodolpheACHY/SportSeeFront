@@ -1,4 +1,4 @@
-import Navigation from "./Navbar";
+import Navbar from "./Navbar";
 import LogoHeader from "./LogoHeader";
 import styles from "./header.module.scss";
 
@@ -9,7 +9,7 @@ const Header = () => {
         <LogoHeader 
           className={styles.header__logoHeader}
        />
-        <Navigation className={styles.header__navigation} />
+        <Navbar className={styles.header__navigation} />
       </header>
     </div>
   );

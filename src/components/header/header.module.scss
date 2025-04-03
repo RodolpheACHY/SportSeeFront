@@ -4,14 +4,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: settings.$secondary-color;
+    background-color: settings.$black;
     color: settings.$secondary-color;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 0px;
     text-align: center;
-    margin-left: 40px;
-    margin-right: 40px;
+    //margin-left: 40px;
+    //margin-right: 40px;
     padding-bottom: 0px;
+    height: 91px;
+    width: 100%;
+    padding-left: 29px;
+    padding-right: 91px;
+
 
     @media (max-width: settings.$breakpoint-tablet) {
         margin: 0 auto;
@@ -21,7 +27,8 @@
 
     &__logoHeader {
         height: 68px;
-        margin-bottom: 50px;
+        width: 170px;
+        //margin-bottom: 50px;
 
         // Supprime le margin-bottom si noMargin est passé
         &--noMargin {
@@ -43,7 +50,7 @@
         list-style: none;
         display: flex;
         justify-content: space-between;
-        gap: 20px;
+        gap: 219px;
         margin: 0;
         padding: 0;
 
@@ -58,16 +65,16 @@
 
     &__link {
         text-decoration: none;
-        color: settings.$black;
+        color: settings.$secondary-color;
         transition: color 0.3s;
-        margin-left: 57px;
+        font-size: 24px;
 
         &:hover {
-            color: settings.$black;
+            color: red;
         }
 
         &--active {
-            border-bottom: 1px solid settings.$black;
+            border-bottom: 1px solid settings.$secondary-color;
         }
 
         @media (max-width: settings.$breakpoint-tablet) {
