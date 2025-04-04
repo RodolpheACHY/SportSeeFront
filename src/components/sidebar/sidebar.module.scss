@@ -1,0 +1,13 @@
+.sidebar {
+    background-color: black;
+    height: 933px;
+    display: flex;
+    flex-direction: column ;
+
+    &__icon-wrapper-Container {
+        display: flex;
+        flex-direction: column ;
+        gap: 20px;
+        padding: 20px;
+    } 
+}
