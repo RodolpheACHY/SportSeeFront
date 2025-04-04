@@ -1,18 +1,15 @@
 .footer {
-  //display: flex; /* Active Flexbox */
-  //flex-direction: column; /* Organise les éléments en colonne */
-  //align-items: center; /* Centre les éléments horizontalement (facultatif) */
-  transform: rotate(90deg);
-  transform-origin: top left;
-  width: 100vh; /* Ajustez la largeur en fonction de la hauteur de l'écran */
-  height: 100vw; /* Ajustez la hauteur en fonction de la largeur de l'écran */
-  margin-top: 50vh; /* Ajustez la marge pour positionner le pied de page */
-  /* Autres styles pour votre footer */
-  background-color: lightgray;
-  padding: 20px;
+  background-color: black;
+  margin-top: 224px;
 
   &__p {
     margin: 0;
-    transform: translateX(20px);
+    transform: rotate(-90deg);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 24px;
+    font-style: normal;
+    color: #fff
   }
 }

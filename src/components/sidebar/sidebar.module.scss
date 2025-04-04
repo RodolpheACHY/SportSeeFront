@@ -3,11 +3,16 @@
     height: 933px;
     display: flex;
     flex-direction: column ;
+    width: 117px;
+    justify-content: center;
 
     &__icon-wrapper-Container {
         display: flex;
         flex-direction: column ;
         gap: 20px;
         padding: 20px;
+        /*position:absolute;
+        top: 30%;
+        height: 30%; */
     } 
 }
