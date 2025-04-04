@@ -11,10 +11,10 @@ const Sidebar = () => {
     <div className={styles.sidebar}>
         <div className={styles['sidebar__icon-wrapper-Container']}>
             {/* Icône par défaut */}
-            <IconWrapper IconComponent={LogoMeditate} />
-            <IconWrapper IconComponent={LogoSwimming} />
-            <IconWrapper IconComponent={LogoBike} />
-            <IconWrapper IconComponent={LogoGym} />
+            <IconWrapper IconComponent={LogoMeditate} onClick={() => alert('Meditate clicked')}/>
+            <IconWrapper IconComponent={LogoSwimming} onClick={() => alert('Swimming clicked')} />
+            <IconWrapper IconComponent={LogoBike} onClick={() => alert('Bike clicked')} />
+            <IconWrapper IconComponent={LogoGym} onClick={() => alert('Gym clicked')} />
         </div>
         <Footer />
     </div>

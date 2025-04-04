@@ -1,21 +1,33 @@
 @use '../../styles/settings';
 
-.icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: #eee; // Couleur par défaut
-  
-    // Styles dynamiques avec des variables CSS
-    width: var(--size, 50px);   //var(--size) au lieu de $size permet de passer la taille et la couleur depuis React avec style={{}}.
-    height: var(--size, 50px);
-    background-color: var(--bg-color, #eee);
-    border-radius: var(--radius, 10px);
+.iconWrapper {
+
+    &__icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #FFFFFF; // Couleur par défaut
     
-    svg {
-      width: 70%;
-      height: 70%;
+        // Styles dynamiques avec des variables CSS
+        //width: var(--size, 50px);   //var(--size) au lieu de $size permet de passer la taille et la couleur depuis React avec style={{}}.
+        width: var(--size, 64px);
+        height: var(--size, 64px);
+        background-color: var(--bg-color, #FFFFFF);
+        border-radius: var(--radius, 10px);
+        
+        /*svg {
+        width: 70%;
+        height: 70%;
+        } */
+
     }
-  }
+
+    &__icon {
+        width: 70%;
+        height: 70%;
+        pointer-events: auto; // ✅ permet aux événements comme le clic de passer
+    }
+
+}
