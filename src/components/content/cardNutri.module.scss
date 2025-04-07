@@ -1,0 +1,37 @@
+.cardNutri {
+    display: flex;
+    align-items: center;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    width: 258px;  //en attendant d'ajouter les charts
+  
+    &__icon-container {
+        flex-shrink: 0;
+    }
+    
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    &__h2 {
+        font-size: 1.2rem;
+        margin: 0px;
+    }
+    
+    &__unit {
+        color: gray;
+        font-size: 0.9rem;
+    }
+    
+    &__p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+}

@@ -1,0 +1,10 @@
+.profilPage {
+    display: flex;
+    flex-direction: column;
+
+    &__graphsAndNutriContainer {
+        display: flex ;
+        flex-direction: row;
+    }
+
+}

@@ -1,16 +1,16 @@
-import Header from "../../components/header/Header";
-import PropTypes from "prop-types";
-import Sidebar from "../../components/sidebar/Sidebar";
+import CardNutriContainer from "../../components/content/CardNutriContainer";
+import DashboardGraphs from "../../components/content/DashboardGraphs";
+import styles from "./profilPage.module.scss";
 
 const ProfilPage= () => {
   return (
     <div>
-      <Header />
-      <Sidebar />
+      <div className={styles.profilPage__graphsAndNutriContainer}>
+        <DashboardGraphs />
+        <CardNutriContainer />
+      </div>
     </div>
   );
 };
 
-ProfilPage.propTypes = {
-};
 export default ProfilPage;
