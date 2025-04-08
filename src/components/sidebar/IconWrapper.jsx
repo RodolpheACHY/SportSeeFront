@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./IconWrapper.module.scss";
+import styles from "./iconWrapper.module.scss";
 import PropTypes from "prop-types";
 
 const IconWrapper = ({ IconComponent, size = "64px", bgColor = "#FFFFFF", radius = "10px", onClick }) => {

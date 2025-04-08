@@ -2,7 +2,7 @@ import UserScoreSimpleRadialBarChart from './UserScoreSimpleRadialBarChart';
 import AverageSessionsChart from './AverageSessionsChart';
 import PerformanceRadarChart from './PerformanceRadarChart';
 import ActivitySimpleBarChart from './ActivitySimpleBarChart';
-import styles from './DashboardGraphs.module.scss';
+import styles from './dashboardGraphs.module.scss';
 
 const DashboardGraphs = () => {
   return (
