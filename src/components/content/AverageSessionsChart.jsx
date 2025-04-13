@@ -1,61 +1,78 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceArea } from 'recharts';
+import styles from './averageSessionsChart.module.scss'
+import CustomTooltipSessions from './CustomTooltipSessions'
+import CustomCursor from './CustomCursor';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+const AverageSessionsChart = () => {
 
-const Example = () => {
+  const data = [
+    {
+      name: 'L',
+      uv: 30,
+    },
+    {
+      name: 'M',
+      uv: 23,
+    },
+    {
+      name: 'M',
+      uv: 45,
+    },
+    {
+      name: 'J',
+      uv: 50,
+    },
+    {
+      name: 'V',
+      uv: 0,
+    },
+    {
+      name: 'S',
+      uv: 0,
+    },
+    {
+      name: 'D',
+      uv: 60,
+    },
+  ];
+
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={300} height={100} data={data}>
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className={styles.averageSessionsChart}>
+      <h2 className={styles.averageSessionsChart__Title}>Durée moyenne des sessions</h2>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart 
+          //width={300} 
+          height={200} 
+          data={data} 
+          /*onMouseLeave={() => setActiveX(null)}
+          onMouseMove={(state) => {
+            if (state && state.activeLabel) {
+              setActiveX(state.activeLabel);
+            }
+          }}*/
+        >
+          <defs>
+            <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="white" stopOpacity={0.4} />
+              <stop offset="60%" stopColor="#FFFFFF" stopOpacity={0.6} />
+              <stop offset="100%" stopColor="white" stopOpacity={1} />
+            </linearGradient>
+          </defs>
+          <Tooltip 
+            content={<CustomTooltipSessions />} 
+            cursor={<CustomCursor />}
+            wrapperStyle={{ outline: "none" }}
+          />
+          <YAxis hide domain={['dataMin - 15', 'dataMax + 15']} />
+          <Line type="natural" dataKey="uv" stroke="url(#lineGradient)" strokeWidth={2} dot={false} activeDot={{  r: 6, stroke: "#FFF", strokeWidth: 2, fill: "#FFF" }} />
+          <XAxis dataKey="name" dy={15} tickLine={false} tick={{ fill: "#FFFFFF", opacity: 0.5, fontSize: 12 }} axisLine={false} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
-Example.demoUrl = 'https://codesandbox.io/p/sandbox/tiny-line-chart-5f5vq6';
+AverageSessionsChart.demoUrl = 'https://codesandbox.io/p/sandbox/tiny-line-chart-5f5vq6';
 
-export default Example;
+export default AverageSessionsChart;

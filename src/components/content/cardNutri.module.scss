@@ -3,10 +3,11 @@
     align-items: center;
     background-color: #fbfbfb;
     border-radius: 5px;
-    padding: 20px;
-    gap: 20px;
+    padding: 32px;
+    gap: 24px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    width: 258px;  //en attendant d'ajouter les charts
+    width: 210px;  //en attendant d'ajouter les charts
+    height: 70px;
   
     &__icon-container {
         flex-shrink: 0;
@@ -19,19 +20,30 @@
     }
     
     &__h2 {
-        font-size: 1.2rem;
+        //font-size: 1.2rem;
         margin: 0px;
+        color: #282D30;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
     }
     
     &__unit {
-        color: gray;
-        font-size: 0.9rem;
+        color: #282D30;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
     }
     
     &__p {
         margin: 0;
-        font-size: 0.9rem;
-        color: #666;
+        color: #74798C;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
     }
 
 }

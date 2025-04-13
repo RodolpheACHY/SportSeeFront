@@ -1,0 +1,19 @@
+.customTooltip {
+    display: flex;
+    flex-direction: column;
+    background-color: #E60000;
+    width: 39px;
+    height: 63px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-around;
+
+    &__span {
+        color: #FFF;
+        text-align: center;
+        font-size: 7px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+    }
+}
