@@ -40,11 +40,12 @@ const AverageSessionsChart = () => {
   return (
     <div className={styles.averageSessionsChart}>
       <h2 className={styles.averageSessionsChart__Title}>Durée moyenne des sessions</h2>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer className={styles.averageSessionsChart__reponsiveContainer} width="100%" height="100%">
         <LineChart 
           //width={300} 
           height={200} 
-          data={data} 
+          data={data}
+          margin={{left: 20, right: 20, top: 20, bottom: 20}}
           /*onMouseLeave={() => setActiveX(null)}
           onMouseMove={(state) => {
             if (state && state.activeLabel) {
@@ -65,7 +66,34 @@ const AverageSessionsChart = () => {
             wrapperStyle={{ outline: "none" }}
           />
           <YAxis hide domain={['dataMin - 15', 'dataMax + 15']} />
-          <Line type="natural" dataKey="uv" stroke="url(#lineGradient)" strokeWidth={2} dot={false} activeDot={{  r: 6, stroke: "#FFF", strokeWidth: 2, fill: "#FFF" }} />
+          <Line 
+            type="natural" 
+            dataKey="uv" 
+            stroke="url(#lineGradient)" 
+            strokeWidth={2} dot={false}
+            // Point blanc de la souris
+            activeDot={({ cx, cy }) => (
+              <>
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={5}
+                  fill="#FFFFFF"
+                  stroke="#FFF"
+                  strokeWidth={2}
+                />
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={8}
+                  fill="none"
+                  stroke="rgba(255, 255, 255, 0.3)"
+                  strokeWidth={8}
+                />
+              </>
+            )}
+
+          />
           <XAxis dataKey="name" dy={15} tickLine={false} tick={{ fill: "#FFFFFF", opacity: 0.5, fontSize: 12 }} axisLine={false} />
         </LineChart>
       </ResponsiveContainer>

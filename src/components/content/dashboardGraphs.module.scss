@@ -1,28 +1,28 @@
 .graphsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; // Espace entre les sections
-    width: 100%; // ou fixe, ex : 800px
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Espace entre les sections
+  width: 100%; // ou fixe, ex : 800px
+}
+
+.graphTop {
+  width: 100%;
+  height: 250px;
+  background-color: #FBFBFB;
+  padding-top: 23px;
+  padding-bottom: 44px;
+  padding-right: 32px;
+  margin-bottom: 24px;
+}
+
+.graphBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  height: 250px;
+
+  > * {
+    flex: 1;
   }
-  
-  .graphTop {
-    width: 100%;
-    height: 250px;
-    background-color: #FBFBFB;
-    padding-top: 23px;
-    padding-bottom: 44px;
-    padding-right: 32px;
-    margin-bottom: 24px;
-  }
-  
-  .graphBottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-    height: 250px;
-  
-    > * {
-      flex: 1;
-    }
-  }
+}

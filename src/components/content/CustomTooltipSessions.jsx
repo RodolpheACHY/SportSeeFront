@@ -6,7 +6,7 @@ const CustomTooltipSessions = ({ active, payload }) => {
     return (
       <div className={styles['customTooltipSessions']}>
         {/* <span className={styles.customTooltipSessions__span}>{`${payload[0].value}mn`}</span> */}
-        <span className={styles.customTooltipSessions__span}>{session.value}mn</span>
+        <span className={styles.customTooltipSessions__span}>{session.value} mn</span>
       </div>
     );
   }
