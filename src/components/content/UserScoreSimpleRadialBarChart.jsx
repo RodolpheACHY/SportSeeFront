@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, } from 'recharts';
 import styles from './UserScoreSimpleRadialBarChart.module.scss'
 
 const data = [
@@ -47,6 +47,14 @@ export default class Example extends PureComponent {
               fill="#FF0000" 
               dataKey="value"
               barSize={13}
+            />
+            <circle
+              cx="52%"
+              cy="43%"
+              r="34%"         // rayon du cercle intérieur
+              fill="white"  // couleur de l’intérieur
+              opacity="0.9"
+              //fillOpacity="0.9"
             />
             {/* Texte centré */}
             <text
