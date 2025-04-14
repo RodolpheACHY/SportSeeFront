@@ -1,31 +1,33 @@
 import React, { PureComponent } from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import styles from './performanceRadarChart.module.scss'
+import CustomAngleAxisTick from './CustomAngleAxisTick'
 
 const data = [
   {
-    "value": 80,
-    "kind": "cardio"
-},
-{
-    "value": 120,
-    "kind": "energy"
-},
-{
-    "value": 140,
-    "kind": "endurance"
-},
-{
-    "value": 50,
-    "kind": "straight"
-},
-{
-    "value": 200,
-    "kind": "speed"
-},
-{
-    "value": 90,
-    "kind": "intensity"
-}
+    subject: 'Intensité',
+    A: 90,
+  },
+  {
+    subject: 'Vitesse',
+    A: 200,
+  },
+  {
+    subject: 'Force',
+    A: 50,
+  },
+  {
+    subject: 'Endurance',
+    A: 140,
+  },
+  {
+    subject: 'Energie',
+    A: 120,
+  },
+  {
+    subject: 'Cardio',
+    A: 80,
+  }
 ];
 
 export default class Example extends PureComponent {
@@ -33,12 +35,14 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="subject" />
-          <PolarRadiusAxis />
-          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+      <ResponsiveContainer className={styles.performanceRadarChart} width="100%" height="100%">
+        <RadarChart cx="50%" cy="50%" outerRadius="75%" data={data}>
+        <PolarGrid radialLines={false} stroke="#FFFFFF" />
+          <PolarAngleAxis
+            dataKey="subject"
+            tick={CustomAngleAxisTick}
+          />
+          <Radar dataKey="A" fill="#FF0101" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>
     );

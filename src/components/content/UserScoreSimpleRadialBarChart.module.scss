@@ -1,0 +1,19 @@
+.UserScoreSimpleRadialBarChart {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    border-radius: 5px;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+  
+    &__Title { 
+        margin-bottom: -10px;
+        margin-left: 30px;
+        margin-top: 24px;
+        color: #20253A;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 160% */
+    }
+}

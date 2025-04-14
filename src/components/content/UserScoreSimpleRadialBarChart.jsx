@@ -1,49 +1,24 @@
 import React, { PureComponent } from 'react';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import styles from './UserScoreSimpleRadialBarChart.module.scss'
 
 const data = [
   {
-    name: '18-24',
-    uv: 31.47,
-    pv: 2400,
-    fill: '#8884d8',
-  },
-  {
-    name: '25-29',
-    uv: 26.69,
-    pv: 4567,
-    fill: '#83a6ed',
-  },
-  {
-    name: '30-34',
-    uv: 15.69,
-    pv: 1398,
-    fill: '#8dd1e1',
-  },
-  {
-    name: '35-39',
-    uv: 8.22,
-    pv: 9800,
-    fill: '#82ca9d',
-  },
-  {
-    name: '40-49',
-    uv: 8.63,
-    pv: 3908,
-    fill: '#a4de6c',
-  },
-  {
-    name: '50+',
-    uv: 2.63,
-    pv: 4800,
-    fill: '#d0ed57',
-  },
-  {
-    name: 'unknow',
-    uv: 6.67,
-    pv: 4800,
-    fill: '#ffc658',
-  },
+        "id": 12,
+        "userInfos": {
+            "firstName": "Karl",
+            "lastName": "Dovineau",
+            "age": 31
+        },
+        "todayScore": 0.12,
+        "value": 12,
+        "keyData": {
+            "calorieCount": 1930,
+            "proteinCount": 155,
+            "carbohydrateCount": 290,
+            "lipidCount": 50
+        }
+    }
 ];
 
 const style = {
@@ -58,18 +33,49 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
-        <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
-          <RadialBar
-            minAngle={15}
-            label={{ position: 'insideStart', fill: '#fff' }}
-            background
-            clockWise
-            dataKey="uv"
-          />
-          <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-        </RadialBarChart>
-      </ResponsiveContainer>
+      <div className={styles.UserScoreSimpleRadialBarChart}>
+        <h2 className={styles.UserScoreSimpleRadialBarChart__Title}>Score</h2>
+        <ResponsiveContainer width="100%" height="100%">
+          <RadialBarChart cx="50%" cy="42%" innerRadius="100" outerRadius="200" barSize={10} data={data} startAngle={80}
+            endAngle={220}>
+            <RadialBar
+              minAngle={15}
+              //label={{ fill: '#fff', position: 'middle', fontWeight: 'bold', formatter: (value) => `${value}%` }}
+              background
+              clockWise
+              cornerRadius={10}
+              fill="#FF0000" 
+              dataKey="value"
+              barSize={13}
+            />
+            {/* Texte centré */}
+            <text
+              x="50%"
+              y="40%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#282D30"
+              fontSize="30"
+              fontWeight="bold"
+            >
+              12%
+            </text>
+
+            <text
+              x="50%"
+              y="50%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#74798C"
+              fontSize="16"
+            >
+              <tspan x="50%" dy={6}>de votre</tspan>
+              <tspan x="50%" dy={25}>objectif</tspan>
+            </text>
+            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+          </RadialBarChart>
+        </ResponsiveContainer>
+      </div>
     );
   }
 }
