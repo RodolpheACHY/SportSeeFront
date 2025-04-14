@@ -72,7 +72,7 @@ export default class Example extends PureComponent {
               <tspan x="50%" dy={6}>de votre</tspan>
               <tspan x="50%" dy={25}>objectif</tspan>
             </text>
-            <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+            {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />  */}
           </RadialBarChart>
         </ResponsiveContainer>
       </div>
