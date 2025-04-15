@@ -1,0 +1,23 @@
+.graphsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Espace entre les sections
+    width: 100%; // ou fixe, ex : 800px
+  }
+  
+  .graphTop {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .graphBottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    height: 250px;
+  
+    > * {
+      flex: 1;
+    }
+  }

@@ -19,7 +19,7 @@ const Navbar = () => {
         </li>
         <li className={styles.header__item}>
           <NavLink
-            to="/profil"
+            to="/profil/8"
             className={({ isActive }) =>
               isActive
                 ? `${styles.header__link} ${styles["header__link--active"]}`
