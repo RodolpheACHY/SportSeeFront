@@ -24,15 +24,15 @@
     }
 
     &__icon {
-        width: 70%; // permet de modifier la taille de l'icône
+        width: 70%; // permet de modifier la taille de l'icône de la sideBar
         height: 70%;
-        pointer-events: auto; // ✅ permet aux événements comme le clic de passer
+        pointer-events: auto; // permet aux événements comme le clic de passer
     }
 
     &__icon-nutri {
-        width: 35%; // permet de modifier la taille de l'icône
+        width: 35%; // permet de modifier la taille de l'icône des nutriCard
         height: 35%;
-        pointer-events: auto; // ✅ permet aux événements comme le clic de passer
+        pointer-events: auto; // permet aux événements comme le clic de passer
     }
 
 }
