@@ -3,9 +3,40 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import styles from './averageSessionsChart.module.scss'
 import CustomTooltipSessions from './CustomTooltipSessions'
 import CustomCursor from './CustomCursor';
+import { data } from '../../mockData/user/12/average-sessions.json'
 
 const AverageSessionsChart = () => {
 
+  const mockData = data.sessions;
+/*
+  {
+    "day": 1,
+    "sessionLength": 30
+},
+{
+    "day": 2,
+    "sessionLength": 23
+},
+{
+    "day": 3,
+    "sessionLength": 45
+},
+{
+    "day": 4,
+    "sessionLength": 50
+},
+{
+    "day": 5,
+    "sessionLength": 0
+},
+{
+    "day": 6,
+    "sessionLength": 0
+},
+{
+    "day": 7,
+    "sessionLength": 60
+}
   const data = [
     {
       name: 'L',
@@ -35,7 +66,22 @@ const AverageSessionsChart = () => {
       name: 'D',
       uv: 60,
     },
-  ];
+  ]; */
+
+  /*
+  const formatSessionDaysFromValue = (sessions) => {
+    const dayLetters = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+  
+    return sessions.map((session) => ({
+      day: dayLetters[session.day - 1] || '', // utilise la valeur `day` pour récupérer la lettre
+      sessionLength: session.sessionLength,
+    }));
+  }; */
+
+  const formatDayLabel = (dayNumber) => {
+    const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+    return days[dayNumber - 1] || '';
+  };
 
   return (
     <div className={styles.averageSessionsChart}>
@@ -44,7 +90,7 @@ const AverageSessionsChart = () => {
         <LineChart 
           //width={300} 
           height={200} 
-          data={data}
+          data={mockData}
           margin={{left: 20, right: 20, top: 20, bottom: 20}}
           /*onMouseLeave={() => setActiveX(null)}
           onMouseMove={(state) => {
@@ -68,7 +114,7 @@ const AverageSessionsChart = () => {
           <YAxis hide domain={['dataMin - 15', 'dataMax + 15']} />
           <Line 
             type="natural" 
-            dataKey="uv" 
+            dataKey="sessionLength" 
             stroke="url(#lineGradient)" 
             strokeWidth={2} dot={false}
             // Point blanc de la souris
@@ -94,7 +140,7 @@ const AverageSessionsChart = () => {
             )}
 
           />
-          <XAxis dataKey="name" dy={15} tickLine={false} tick={{ fill: "#FFFFFF", opacity: 0.5, fontSize: 12 }} axisLine={false} />
+          <XAxis dataKey="day" dy={15} tickLine={false} tickFormatter={formatDayLabel} tick={{ fill: "#FFFFFF", opacity: 0.5, fontSize: 12 }} axisLine={false} />
         </LineChart>
       </ResponsiveContainer>
     </div>
