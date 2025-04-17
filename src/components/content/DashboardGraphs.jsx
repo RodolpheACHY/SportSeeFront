@@ -3,8 +3,10 @@ import AverageSessionsChart from './AverageSessionsChart';
 import PerformanceRadarChart from './PerformanceRadarChart';
 import ActivitySimpleBarChart from './ActivitySimpleBarChart';
 import styles from './dashboardGraphs.module.scss';
+import { getPerformanceRadarChartData } from '../../utils/performanceData';
 
 const DashboardGraphs = () => {
+  const performanceData = getPerformanceRadarChartData();
   return (
     <div className={styles.graphsContainer}>
       <div className={styles.graphTop}>
@@ -12,7 +14,7 @@ const DashboardGraphs = () => {
       </div>
       <div className={styles.graphBottom}>
         <AverageSessionsChart />
-        <PerformanceRadarChart />
+        <PerformanceRadarChart data={performanceData}/>
         <UserScoreSimpleRadialBarChart />
       </div>
     </div>
