@@ -1,4 +1,4 @@
-import { fetchPerformanceData } from './performanceService';
+import { fetchPerformanceData } from './performanceServiceAPI';
 import { formatPerformanceDataForRadar } from './performanceFormatter';
 
 export const getPerformanceRadarChartData = async (userId) => {
