@@ -9,7 +9,7 @@ export const fetchPerformanceData = async (userId) => {
     };
   }
 
-  const url = `http://localhost:3000/user/${userId}/performance`;
+  const url = `http://localhost:3000/user/${userId}/performance`;     // notre backend docker (ne pas oublier de le lancer ....)
   try {
     const response = await fetch(url);
     if (!response.ok) {

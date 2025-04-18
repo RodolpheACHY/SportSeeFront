@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import UserScoreSimpleRadialBarChart from './UserScoreSimpleRadialBarChart';
 import AverageSessionsChart from './AverageSessionsChart';
 import PerformanceRadarChart from './PerformanceRadarChart';
@@ -8,10 +9,11 @@ import { getPerformanceRadarChartData } from '../../utils/performanceData';
 
 const DashboardGraphs = () => {
   const [performanceData, setPerformanceData] = useState(null);
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPerformanceRadarChartData(18);
+      const data = await getPerformanceRadarChartData(id);
       setPerformanceData(data);
     };
     fetchData();

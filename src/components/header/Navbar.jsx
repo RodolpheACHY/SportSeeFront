@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./header.module.scss";
+import { DEFAULT_USER } from "../../config";
 
 const Navbar = () => {
   return (
@@ -19,7 +20,7 @@ const Navbar = () => {
         </li>
         <li className={styles.header__item}>
           <NavLink
-            to="/profil"
+            to={`/profil/${DEFAULT_USER}`}
             className={({ isActive }) =>
               isActive
                 ? `${styles.header__link} ${styles["header__link--active"]}`

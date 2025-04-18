@@ -11,8 +11,8 @@ function Router() {
         <Routes>
           <Route path="/" element={<Layout />}>
               <Route path="profil" element={<ProfilPage />} />
-              {/* <Route path="profil/:id" element={<ProfilPage/>} /> */}
-              
+              <Route path="profil/:id" element={<ProfilPage/>} />
+
               {/* <Route path="/profil" element={<ProfilPage data={data} />} /> */}             
               {/* path="*" fonctionne si jamais l'url ne correspond à rien de déclarer au dessus */}
               {/* <Route path="*" element={<Page404 />} /> */}
