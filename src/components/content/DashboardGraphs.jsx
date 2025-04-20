@@ -5,7 +5,7 @@ import AverageSessionsChart from './AverageSessionsChart';
 import PerformanceRadarChart from './PerformanceRadarChart';
 import ActivitySimpleBarChart from './ActivitySimpleBarChart';
 import styles from './dashboardGraphs.module.scss';
-import { getPerformanceRadarChartData } from '../../utils/performanceData';
+import { getPerformanceRadarChartData } from '../../dataLoaders/getPerformanceRadarChartData';
 
 const DashboardGraphs = () => {
   const [performanceData, setPerformanceData] = useState(null);
@@ -17,7 +17,7 @@ const DashboardGraphs = () => {
       setPerformanceData(data);
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div className={styles.graphsContainer}>

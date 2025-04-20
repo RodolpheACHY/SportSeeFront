@@ -10,7 +10,6 @@ function Router() {
     <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-              <Route path="profil" element={<ProfilPage />} />
               <Route path="profil/:id" element={<ProfilPage/>} />
 
               {/* <Route path="/profil" element={<ProfilPage data={data} />} /> */}             

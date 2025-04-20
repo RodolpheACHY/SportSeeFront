@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, } from 'recharts';
+//import React, { PureComponent } from 'react';
+import { RadialBarChart, RadialBar, ResponsiveContainer, } from 'recharts';
 import styles from './UserScoreSimpleRadialBarChart.module.scss'
 
 const data = [
@@ -21,17 +21,7 @@ const data = [
     }
 ];
 
-const style = {
-  top: '50%',
-  right: 0,
-  transform: 'translate(0, -50%)',
-  lineHeight: '24px',
-};
-
-export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/p/sandbox/simple-radial-bar-chart-gnwjjg';
-
-  render() {
+const UserScoreSimpleRadialBarChart = () => {
     return (
       <div className={styles.UserScoreSimpleRadialBarChart}>
         <h2 className={styles.UserScoreSimpleRadialBarChart__Title}>Score</h2>
@@ -40,7 +30,6 @@ export default class Example extends PureComponent {
             endAngle={220}>
             <RadialBar
               minAngle={15}
-              //label={{ fill: '#fff', position: 'middle', fontWeight: 'bold', formatter: (value) => `${value}%` }}
               background
               clockWise
               cornerRadius={10}
@@ -54,7 +43,6 @@ export default class Example extends PureComponent {
               r="34%"         // rayon du cercle intérieur
               fill="white"  // couleur de l’intérieur
               opacity="0.9"
-              //fillOpacity="0.9"
             />
             {/* Texte centré */}
             <text
@@ -80,10 +68,10 @@ export default class Example extends PureComponent {
               <tspan x="50%" dy={6}>de votre</tspan>
               <tspan x="50%" dy={25}>objectif</tspan>
             </text>
-            {/* <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />  */}
           </RadialBarChart>
         </ResponsiveContainer>
       </div>
     );
-  }
 }
+
+export default UserScoreSimpleRadialBarChart;
