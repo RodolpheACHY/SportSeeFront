@@ -7,19 +7,23 @@ import ActivitySimpleBarChart from './ActivitySimpleBarChart';
 import styles from './dashboardGraphs.module.scss';
 import { getPerformanceRadarChartData } from '../../dataLoaders/getPerformanceRadarChartData';
 import { getActivityData } from '../../dataLoaders/getActivityBarChartData';
+import { getScoreRadialChartData } from '../../dataLoaders/getScoreRadialChartData';
 
 const DashboardGraphs = () => {
   const [performanceData, setPerformanceData] = useState(null);
   const [activityData, setActivityData] = useState(null);
+  const [scoreData, setScoreData] = useState(undefined);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       const performanceData = await getPerformanceRadarChartData(id);
       const activityData = await getActivityData(id);
+      const scoreData = await getScoreRadialChartData(id);
 
       setPerformanceData(performanceData);
       setActivityData(activityData);
+      setScoreData(scoreData);
     };
     fetchData();
   }, [id]);
@@ -32,7 +36,7 @@ const DashboardGraphs = () => {
       <div className={styles.graphBottom}>
         <AverageSessionsChart />
         <PerformanceRadarChart data={performanceData} />
-        <UserScoreSimpleRadialBarChart />
+        <UserScoreSimpleRadialBarChart data={scoreData}/>
       </div>
     </div>
   );

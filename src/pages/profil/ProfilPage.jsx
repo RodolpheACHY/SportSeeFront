@@ -15,7 +15,7 @@ const ProfilPage = () => {
     const fetchFirstName = async () => {
       try {
         const name = await getUserFirstNameData(id);
-        setFirstName(name || 'Problème de nom');
+        setFirstName(name || '');
       } catch (err) {
         setError(err.message);
       }
