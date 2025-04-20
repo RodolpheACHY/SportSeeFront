@@ -4,11 +4,13 @@ import UserFirstName from "../../components/content/UserFirstName";
 import styles from "./profilPage.module.scss";
 import { useEffect, useState } from "react";
 import { getUserFirstNameData } from "../../dataLoaders/getUserFirstNameData";
+import { getCardNutriContainerData } from "../../dataLoaders/getCardNutriContainerData"
 import { useParams } from 'react-router-dom'; 
 
 const ProfilPage = () => {
   const { id } = useParams(); 
   const [firstName, setFirstName] = useState("");
+  const [keyData, setKeyData] = useState(null)
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -16,6 +18,8 @@ const ProfilPage = () => {
       try {
         const name = await getUserFirstNameData(id);
         setFirstName(name || '');
+        const KeyData = await getCardNutriContainerData(id);
+        setKeyData(KeyData || {})
       } catch (err) {
         setError(err.message);
       }
@@ -33,7 +37,7 @@ const ProfilPage = () => {
       <UserFirstName firstName={firstName} />
       <div className={styles.profilPage__graphsAndNutriContainer}>
         <DashboardGraphs /> 
-        <CardNutriContainer />
+        <CardNutriContainer cards={keyData} />
       </div>
     </div>
   );
