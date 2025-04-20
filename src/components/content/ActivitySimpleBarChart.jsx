@@ -23,19 +23,20 @@ const ActivitySimpleBarChart = ( {data} ) => {
             <CartesianGrid strokeDasharray="1 3" vertical={false} horizontal={true} />
             <XAxis dataKey="day" dy={15} tickLine={false} />
             <YAxis
-              yAxisId="left"
-              orientation="left"
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12 }}
-              domain={['dataMin - 1', 'dataMax + 1']}
-            />
-            <YAxis
               yAxisId="right"
               orientation="right"
               axisLine={false}
               tickLine={false}
               tick={{ fontSize: 12 }}
+              tickCount={3}
+            />
+            <YAxis
+              yAxisId="left"
+              orientation="left"
+              axisLine={false}
+              tickLine={false}
+              tick={false }
+              domain={['dataMin - 1', 'dataMax + 1']}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend verticalAlign="top" align="right" iconType="circle" height={64} formatter={(value) => ( <span style={{ marginLeft: 10, marginRight: 32, color: "#74798C" }}>{value}</span>)} wrapperStyle={{ marginTop: -20 }}/>
