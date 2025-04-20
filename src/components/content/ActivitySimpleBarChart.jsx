@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import styles from './activitySimpleBarChart.module.scss'
 import CustomTooltip from './CustomTooltip'
-import { data } from '../../mockData/user/12/activity.json'
+//import { data } from '../../mockData/user/12/activity.json'
 
-const mockData = data.sessions;
+// const mockData = data.sessions;
 
 /*
 const mockData = [
@@ -49,7 +49,7 @@ const formatDayIndex = (value, index) => {
   return (index + 1).toString();
 }
 
-const ActivitySimpleBarChart = () => {
+const ActivitySimpleBarChart = ( {data} ) => {
     return (
       <div className={styles.activitySimpleBarChart} style={{ height: "300px" }}>
         <h2 className={styles.activitySimpleBarChart__Title}>Activité quotidienne</h2>
@@ -58,7 +58,7 @@ const ActivitySimpleBarChart = () => {
             width={500}
             height={300}
             barGap={10}
-            data={mockData}
+            data={data}
             margin={{
               top: 5,
               right: 30,

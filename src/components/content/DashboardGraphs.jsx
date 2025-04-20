@@ -13,8 +13,8 @@ const DashboardGraphs = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPerformanceRadarChartData(id);
-      setPerformanceData(data);
+      const performanceData = await getPerformanceRadarChartData(id);
+      setPerformanceData(performanceData);
     };
     fetchData();
   }, [id]);
