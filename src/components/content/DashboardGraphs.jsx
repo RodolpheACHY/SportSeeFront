@@ -8,11 +8,13 @@ import styles from './dashboardGraphs.module.scss';
 import { getPerformanceRadarChartData } from '../../dataLoaders/getPerformanceRadarChartData';
 import { getActivityData } from '../../dataLoaders/getActivityBarChartData';
 import { getScoreRadialChartData } from '../../dataLoaders/getScoreRadialChartData';
+import { getSessionLineChartData } from '../../dataLoaders/getSessionLineChartData';
 
 const DashboardGraphs = () => {
   const [performanceData, setPerformanceData] = useState(null);
   const [activityData, setActivityData] = useState(null);
   const [scoreData, setScoreData] = useState(undefined);
+  const [sessionData, setSessionData] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -20,10 +22,12 @@ const DashboardGraphs = () => {
       const performanceData = await getPerformanceRadarChartData(id);
       const activityData = await getActivityData(id);
       const scoreData = await getScoreRadialChartData(id);
+      const sessionData = await getSessionLineChartData(id);
 
       setPerformanceData(performanceData);
       setActivityData(activityData);
       setScoreData(scoreData);
+      setSessionData(sessionData);
     };
     fetchData();
   }, [id]);
@@ -34,7 +38,7 @@ const DashboardGraphs = () => {
         <ActivitySimpleBarChart data={activityData} />
       </div>
       <div className={styles.graphBottom}>
-        <AverageSessionsChart />
+        <AverageSessionsChart data={sessionData} />
         <PerformanceRadarChart data={performanceData} />
         <UserScoreSimpleRadialBarChart data={scoreData}/>
       </div>

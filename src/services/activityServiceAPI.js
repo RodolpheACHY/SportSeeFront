@@ -4,7 +4,7 @@ import { USE_MOCKS } from '../config';
 export const fetchActivityData = async (userId) => {
   if (USE_MOCKS) {
     return {
-      data: mockActivityData.data.sessions,
+      data: mockActivityData.sessions,
     };
   }
 
