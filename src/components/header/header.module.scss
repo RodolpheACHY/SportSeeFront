@@ -19,12 +19,12 @@
     //padding-right: 91px;
     box-sizing: border-box;
 
-
+    /*
     @media (max-width: settings.$breakpoint-tablet) {
         margin: 0 auto;
         padding: 0;
         //width: 90%
-    }
+    } */
 
     &__logoHeader {
         height: 68px;
@@ -36,10 +36,11 @@
         margin-bottom: 0;
         }
 
+        /*
         @media (max-width: settings.$breakpoint-tablet) {
             width: 130px;
             margin-bottom: 0px;
-        }
+        } */
     }
 
     &__navigation {
@@ -56,10 +57,10 @@
         margin: 0;
         padding: 0;
         
-
+        /*
         @media (max-width: settings.$breakpoint-tablet) {
            gap: 26px;
-        }
+        } */
     }
 
     &__item {
@@ -79,11 +80,11 @@
         &--active {
             border-bottom: 1px solid settings.$secondary-color;
         }
-
+        /*
         @media (max-width: settings.$breakpoint-tablet) {
             font-size: settings.$font-size-h6;
             text-transform: uppercase;
             margin-left: 0px;
-        }
+        } */
     }
 }
