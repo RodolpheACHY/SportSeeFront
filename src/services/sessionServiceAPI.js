@@ -1,11 +1,24 @@
-import { data as mockSessionData } from '../mockData/user/12/average-sessions.json';
+//import { data as mockSessionData } from '../mockData/user/12/average-sessions.json';
 import { USE_MOCKS } from '../config';
 
 export const fetchSessionData = async (userId) => {
-  if (USE_MOCKS) {
+  /*if (USE_MOCKS) {
     return {
       data: mockSessionData.sessions,
     };
+  } */
+
+  if (USE_MOCKS) {
+    try {
+      // 🪄 Import dynamique basé sur l’ID utilisateur
+      const { data: mockSessionData } = await import(`../mockData/user/${userId}/average-sessions.json`);
+      return {
+        data: mockSessionData.sessions,
+      };
+    } catch (error) {
+      console.error("❌ Erreur lors de l'import des données mockées :", error);
+      return { data: [] };
+    }
   }
 
   const url = `http://localhost:3000/user/${userId}/average-sessions`;     // notre backend docker (ne pas oublier de le lancer ....)

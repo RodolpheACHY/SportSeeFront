@@ -1,13 +1,27 @@
-import { data as mockPerformanceData } from '../mockData/user/12/performance.json';
+//import { data as mockPerformanceData } from '../mockData/user/12/performance.json';
 import { USE_MOCKS } from '../config';
 
 export const fetchPerformanceData = async (userId) => {
-  if (USE_MOCKS) {
+  /* if (USE_MOCKS) {
     return {
       data: mockPerformanceData.data,
       kind: mockPerformanceData.kind,
     };
-  }
+  } */
+
+  if (USE_MOCKS) {
+      try {
+        // 🪄 Import dynamique basé sur l’ID utilisateur
+        const { data: mockPerformanceData } = await import(`../mockData/user/${userId}/performance.json`);
+        return {
+          data: mockPerformanceData.data,
+          kind: mockPerformanceData.kind,
+        };
+      } catch (error) {
+        console.error("❌ Erreur lors de l'import des données mockées :", error);
+        return { data: [] };
+      }
+    }
 
   const url = `http://localhost:3000/user/${userId}/performance`;     // notre backend docker (ne pas oublier de le lancer ....)
   try {
