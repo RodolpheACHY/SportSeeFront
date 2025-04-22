@@ -1,12 +1,6 @@
-//import { data as mockSessionData } from '../mockData/user/12/average-sessions.json';
 import { USE_MOCKS } from '../config';
 
 export const fetchSessionData = async (userId) => {
-  /*if (USE_MOCKS) {
-    return {
-      data: mockSessionData.sessions,
-    };
-  } */
 
   if (USE_MOCKS) {
     try {

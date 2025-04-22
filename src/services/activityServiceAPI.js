@@ -1,12 +1,6 @@
-//import { data as mockActivityData } from '../mockData/user/12/activity.json';
 import { USE_MOCKS } from '../config';
 
 export const fetchActivityData = async (userId) => {
-  /* if (USE_MOCKS) {
-    return {
-      data: mockActivityData.sessions,
-    };
-  } */
 
   if (USE_MOCKS) {
     try {

@@ -1,14 +1,7 @@
-//import { data as mockPerformanceData } from '../mockData/user/12/performance.json';
 import { USE_MOCKS } from '../config';
 
 export const fetchPerformanceData = async (userId) => {
-  /* if (USE_MOCKS) {
-    return {
-      data: mockPerformanceData.data,
-      kind: mockPerformanceData.kind,
-    };
-  } */
-
+  
   if (USE_MOCKS) {
       try {
         // 🪄 Import dynamique basé sur l’ID utilisateur

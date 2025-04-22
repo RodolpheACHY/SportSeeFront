@@ -13,7 +13,7 @@ const Page404 = () => {
           Oups ! La page que vous demandez n&apos;existe pas.
         </p>
 
-        {/* Lien vers l'accueil */}
+        {/* Lien vers la page de profil par défaut */}
         <Link to="/profil/12" className={styles.page404__link}>
           Retourner sur la page de profil par défaut
         </Link>

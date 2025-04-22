@@ -24,7 +24,7 @@ const IconWrapper = ({ IconComponent, size = "64px", bgColor = "#FFFFFF", radius
       role={onClick ? "button" : undefined} // Ajouter le rôle si cliquable
       tabIndex={onClick ? 0 : undefined} // Ajouter le tabIndex si cliquable
     >
-      {/* Assure-toi que l'icône est bien affichée */}
+      {/* Pour s'assurer que l'icône est bien affichée */}
       { IconComponent && <IconComponent className={styles.iconWrapper__icon} />}
     </div>
   );
@@ -32,11 +32,11 @@ const IconWrapper = ({ IconComponent, size = "64px", bgColor = "#FFFFFF", radius
 
 // Définition des PropTypes
 IconWrapper.propTypes = {
-    IconComponent: PropTypes.elementType.isRequired, // Un composant React (ex: un SVG importé)
-    size: PropTypes.string, // Ex: "50px", "3rem"
-    bgColor: PropTypes.string, // Ex: "#eee", "red", "rgba(0,0,0,0.5)"
-    radius: PropTypes.string, // Ex: "10px", "50%"
-    onClick: PropTypes.func, // La prop onClick est optionnelle maintenant
+    IconComponent: PropTypes.elementType.isRequired, // Un composant React 
+    size: PropTypes.string, 
+    bgColor: PropTypes.string, 
+    radius: PropTypes.string, 
+    onClick: PropTypes.func, 
   };
   
 // Valeurs par défaut (au cas où elles ne sont pas passées en props)

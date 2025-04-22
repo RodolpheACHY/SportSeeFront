@@ -11,16 +11,10 @@
         background-color: #FFFFFF; // Couleur par défaut
     
         // Styles dynamiques avec des variables CSS
-        //width: var(--size, 50px);   //var(--size) au lieu de $size permet de passer la taille et la couleur depuis React avec style={{}}.
         width: var(--size, 64px);
         height: var(--size, 64px);
         background-color: var(--bg-color, #FFFFFF);
         border-radius: var(--radius, 10px);
-        
-        /*svg {
-        width: 70%;
-        height: 70%;
-        } */
     }
 
     &__icon {

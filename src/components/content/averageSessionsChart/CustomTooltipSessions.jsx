@@ -5,7 +5,6 @@ const CustomTooltipSessions = ({ active, payload }) => {
     const session = payload[0]; // accès à l’unique donnée
     return (
       <div className={styles['customTooltipSessions']}>
-        {/* <span className={styles.customTooltipSessions__span}>{`${payload[0].value}mn`}</span> */}
         <span className={styles.customTooltipSessions__span}>{session.value} mn</span>
       </div>
     );
