@@ -15,24 +15,24 @@ Objectif : Développez un tableau de bord d'analytics avec React
 
 ## Structure du projet
 
-📦 my-react-app
-├── node_modules/ 
-├── public/ # Fichiers statiques
-├── src/
-│ ├── assets/ # Images et icônes
-│ ├── components/ # Composants réutilisables
-│ ├── pages/ # Pages principales (Home, Profil, About, 404…)
-│ ├── mockData/ # Données mockées pour chaque utilisateur
-│ ├── formatters/ # Traitement des données pour les rendre au format attendu par le composant
-│ ├── services/ # Appels API & mocks dynamiques
-│ ├── dataLoaders/ # Fonctions de récupération des données via useEffect
-│ ├── styles/ # Variables, mixins, reset CSS…
-│ ├── App.jsx # Composant racine
-│ ├── main.jsx # Point d'entrée React
-│ ├── Router.jsx # Composant chargé du routage
-│ └── config.js # Fichier de configuration
-├── README.md # Présentation du projet, guide, et infos importantes pour prendre en main le projet
-└── vite.config.js  # Fichier de configuration de Vite
+📦 my-react-app  
+├── node_modules/   
+├── public/ # Fichiers statiques  
+├── src/  
+│ ├── assets/ # Images et icônes  
+│ ├── components/ # Composants réutilisables  
+│ ├── pages/ # Pages principales (Home, Profil, About, 404…)  
+│ ├── mockData/ # Données mockées pour chaque utilisateur  
+│ ├── formatters/ # Traitement des données pour les rendre au format attendu par le composant  
+│ ├── services/ # Appels API & mocks dynamiques  
+│ ├── dataLoaders/ # Fonctions de récupération des données via useEffect  
+│ ├── styles/ # Variables, mixins, reset CSS…  
+│ ├── App.jsx # Composant racine  
+│ ├── main.jsx # Point d'entrée React  
+│ ├── Router.jsx # Composant chargé du routage  
+│ └── config.js # Fichier de configuration  
+├── README.md # Présentation du projet, guide, et infos importantes pour prendre en main le projet  
+└── vite.config.js  # Fichier de configuration de Vite  
 
 
 ## Description
@@ -74,8 +74,8 @@ yarn dev
 
 ### Changer d'utilisateur via l'URL:
 
-- [User 12](http://localhost:5173/user/12)
-- [User 18](http://localhost:5173/user/18)
+- [User 12](http://localhost:5173/user/12) - http://localhost:5173/user/12  
+- [User 18](http://localhost:5173/user/18) - http://localhost:5173/user/18
 
 ### Responsive
 
@@ -91,10 +91,10 @@ Le projet est lisible à partir de 1024x768
 
 ### Donnnées mockées dispos dans
 
-my-react-app\src\mockData\user\{id}\activity.json
-my-react-app\src\mockData\user\{id}\user.json
-my-react-app\src\mockData\user\{id}\average-sessions.json
-my-react-app\src\mockData\user\{id}\performance.json
+my-react-app\src\mockData\user\{id}\activity.json  
+my-react-app\src\mockData\user\{id}\user.json  
+my-react-app\src\mockData\user\{id}\average-sessions.json  
+my-react-app\src\mockData\user\{id}\performance.json  
 
 ### Endpoints
 
@@ -112,5 +112,5 @@ my-react-app\src\mockData\user\{id}\performance.json
 
 ### Auteur
 
-🎓 Projet réalisé dans le cadre d’une formation [OpenClassrooms](https://openclassrooms.com/).
+🎓 Projet réalisé dans le cadre d’une formation [OpenClassrooms](https://openclassrooms.com/).  
 💻 Codé avec ❤️ par **Rodolphe / RodolpheACHY**
