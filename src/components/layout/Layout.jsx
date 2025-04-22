@@ -1,6 +1,6 @@
 // src/layout/Layout.jsx
 import Header from '../header/Header';
-import Sidebar from '../sidebar/Sidebar';
+import Sidebar from '../sidebar/sidebar/Sidebar';
 import styles from './layout.module.scss';
 import PropTypes from 'prop-types';
 import { Outlet } from 'react-router-dom';

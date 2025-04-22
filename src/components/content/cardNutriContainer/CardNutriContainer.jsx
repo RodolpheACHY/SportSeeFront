@@ -1,4 +1,4 @@
-import CardNutri from "./CardNutri";
+import CardNutri from "../cardNutri/CardNutri";
 import styles from "./cardNutriContainer.module.scss";
 
 const CardNutriContainer = ({cards}) => {

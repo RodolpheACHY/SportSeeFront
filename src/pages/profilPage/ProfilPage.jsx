@@ -1,11 +1,11 @@
-import CardNutriContainer from "../../components/content/CardNutriContainer";
-import DashboardGraphs from "../../components/content/DashboardGraphs";
-import UserFirstName from "../../components/content/UserFirstName";
+import CardNutriContainer from "../../components/content/cardNutriContainer/CardNutriContainer";
+import DashboardGraphs from "../../components/content/dashboardGraphs/DashboardGraphs";
+import UserFirstName from "../../components/content/userFirstName/UserFirstName";
 import styles from "./profilPage.module.scss";
 import { useEffect, useState } from "react";
 import { getUserFirstNameData } from "../../dataLoaders/getUserFirstNameData";
 import { getCardNutriContainerData } from "../../dataLoaders/getCardNutriContainerData"
-import { Navigate, useParams } from 'react-router-dom'; 
+import { Navigate, useParams } from 'react-router-dom';
 
 const ProfilPage = () => {
   const { id } = useParams(); 

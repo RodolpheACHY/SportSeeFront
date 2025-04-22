@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import UserScoreSimpleRadialBarChart from './UserScoreSimpleRadialBarChart';
-import AverageSessionsChart from './AverageSessionsChart';
-import PerformanceRadarChart from './PerformanceRadarChart';
-import ActivitySimpleBarChart from './ActivitySimpleBarChart';
+import UserScoreSimpleRadialBarChart from '../userScoreSimpleRadialBarChart/UserScoreSimpleRadialBarChart';
+import AverageSessionsChart from '../averageSessionsChart/AverageSessionsChart';
+import PerformanceRadarChart from '../performanceRadarChart/PerformanceRadarChart';
+import ActivitySimpleBarChart from '../activitySimpleBarChart/ActivitySimpleBarChart';
 import styles from './dashboardGraphs.module.scss';
-import { getPerformanceRadarChartData } from '../../dataLoaders/getPerformanceRadarChartData';
-import { getActivityData } from '../../dataLoaders/getActivityBarChartData';
-import { getScoreRadialChartData } from '../../dataLoaders/getScoreRadialChartData';
-import { getSessionLineChartData } from '../../dataLoaders/getSessionLineChartData';
+import { getPerformanceRadarChartData } from '../../../dataLoaders/getPerformanceRadarChartData';
+import { getActivityData } from '../../../dataLoaders/getActivityBarChartData';
+import { getScoreRadialChartData } from '../../../dataLoaders/getScoreRadialChartData';
+import { getSessionLineChartData } from '../../../dataLoaders/getSessionLineChartData';
 
 const DashboardGraphs = () => {
   const [performanceData, setPerformanceData] = useState(null);

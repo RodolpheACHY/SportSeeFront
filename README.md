@@ -73,8 +73,8 @@ yarn dev
 
 ### Changer d'utilisateur via l'URL:
 
-- [User 12](http://localhost:5173/user/12) - http://localhost:5173/user/12  
-- [User 18](http://localhost:5173/user/18) - http://localhost:5173/user/18
+- [User 12](http://localhost:5173/profil/12) - http://localhost:5173/profil/12  
+- [User 18](http://localhost:5173/profil/18) - http://localhost:5173/profil/18
 
 ### Responsive
 
