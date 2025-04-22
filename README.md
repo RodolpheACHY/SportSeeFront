@@ -15,8 +15,7 @@ Objectif : Développez un tableau de bord d'analytics avec React
 
 ## Structure du projet
 
-📦 my-react-app  
-├── node_modules/   
+📦 SportSeeFront  
 ├── public/ # Fichiers statiques  
 ├── src/  
 │ ├── assets/ # Images et icônes  
@@ -91,10 +90,10 @@ Le projet est lisible à partir de 1024x768
 
 ### Donnnées mockées dispos dans
 
-my-react-app\src\mockData\user\{id}\activity.json  
-my-react-app\src\mockData\user\{id}\user.json  
-my-react-app\src\mockData\user\{id}\average-sessions.json  
-my-react-app\src\mockData\user\{id}\performance.json  
+SportSeeFront\src\mockData\user\\{id}\activity.json  
+SportSeeFront\src\mockData\user\\{id}\user.json  
+SportSeeFront\src\mockData\user\\{id}\average-sessions.json  
+SportSeeFront\src\mockData\user\\{id}\performance.json  
 
 ### Endpoints
 
