@@ -21,8 +21,7 @@ const ProfilPage = () => {
         const KeyData = await getCardNutriContainerData(id);
       
         if (!name || !KeyData) {
-          // Données introuvables
-          setNotFound(true);
+          setNotFound(true);  // ID invalide
           return
         } 
         
@@ -30,8 +29,9 @@ const ProfilPage = () => {
         setFirstName(name || '');
         setKeyData(KeyData || {});
       } catch (err) {
-        // Erreur technique (fetch planté, etc.)
+        // Erreur technique (API indiponible, fetch planté, etc.)
         console.error("Erreur technique : ", err);
+        alert("❌ Le serveur API ne répond pas. Vous allez être redirigé.");
         setError("Une erreur est survenue. Veuillez réessayer.");
       }
     };

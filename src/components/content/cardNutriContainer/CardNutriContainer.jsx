@@ -1,5 +1,6 @@
 import CardNutri from "../cardNutri/CardNutri";
 import styles from "./cardNutriContainer.module.scss";
+import PropTypes from "prop-types";
 
 const CardNutriContainer = ({cards}) => {
 
@@ -17,6 +18,18 @@ const CardNutriContainer = ({cards}) => {
       ))}
     </div>
   );
+};
+
+CardNutriContainer.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.elementType.isRequired,
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      unit: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      bgColor: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default CardNutriContainer;

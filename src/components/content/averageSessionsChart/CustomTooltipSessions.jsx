@@ -1,4 +1,5 @@
 import styles from './customTooltipSessions.module.scss'
+import PropTypes from "prop-types";
 
 const CustomTooltipSessions = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -10,6 +11,15 @@ const CustomTooltipSessions = ({ active, payload }) => {
     );
   }
   return null;
+};
+
+CustomTooltipSessions.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    })
+  ),
 };
 
 export default CustomTooltipSessions;

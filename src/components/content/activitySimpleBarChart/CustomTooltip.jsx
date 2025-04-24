@@ -1,4 +1,5 @@
 import styles from './customTooltip.module.scss'
+import PropTypes from "prop-types";
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -10,6 +11,15 @@ const CustomTooltip = ({ active, payload }) => {
     );
   }
   return null;
+};
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    })
+  ),
 };
 
 export default CustomTooltip;

@@ -1,5 +1,4 @@
 import styles from "./header.module.scss";
-import PropTypes from "prop-types"; // Import PropTypes
 
 const LogoHeader = () => {
   return (

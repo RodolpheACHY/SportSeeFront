@@ -3,6 +3,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'rec
 import styles from './averageSessionsChart.module.scss'
 import CustomTooltipSessions from './CustomTooltipSessions'
 import CustomCursor from './CustomCursor';
+import PropTypes from "prop-types";
 
 const AverageSessionsChart = ({data}) => {
   return (
@@ -61,5 +62,14 @@ const AverageSessionsChart = ({data}) => {
     </div>
   );
 };
+
+AverageSessionsChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      sessionLength: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+}
 
 export default AverageSessionsChart;

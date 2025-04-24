@@ -2,6 +2,7 @@ import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import styles from './performanceRadarChart.module.scss';
 import CustomAngleAxisTick from './CustomAngleAxisTick';
+import PropTypes from 'prop-types';
 
 const PerformanceRadarChart = ({ data }) => {
   return (
@@ -18,4 +19,12 @@ const PerformanceRadarChart = ({ data }) => {
   );
 };
 
+PerformanceRadarChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      subject: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
+};
 export default PerformanceRadarChart;

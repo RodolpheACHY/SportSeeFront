@@ -1,7 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import styles from './activitySimpleBarChart.module.scss'
 import CustomTooltip from './CustomTooltip'
+import PropTypes from "prop-types";
 
 const ActivitySimpleBarChart = ( {data} ) => {
     return (
@@ -47,5 +48,15 @@ const ActivitySimpleBarChart = ( {data} ) => {
       </div>
     );
 }
+
+ActivitySimpleBarChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
 
 export default ActivitySimpleBarChart ;

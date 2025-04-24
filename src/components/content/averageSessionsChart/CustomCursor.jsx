@@ -1,4 +1,5 @@
 import { Rectangle } from "recharts";
+import PropTypes from "prop-types";
 
 const CustomCursor = ({ points, width, height }) => {
     if (!points || points.length === 0) return null;
@@ -14,5 +15,18 @@ const CustomCursor = ({ points, width, height }) => {
         />
     );
 };
+
+
+CustomCursor.propTypes = {
+    points: PropTypes.arrayOf(
+      PropTypes.shape({
+        x: PropTypes.number.isRequired,
+        y: PropTypes.number,
+      })
+    ),
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+};
+  
 
 export default CustomCursor;

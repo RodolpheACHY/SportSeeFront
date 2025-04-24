@@ -1,6 +1,7 @@
 import React from 'react';
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 import styles from './UserScoreSimpleRadialBarChart.module.scss';
+import PropTypes from 'prop-types';
 
 const UserScoreSimpleRadialBarChart = ({ data }) => {
   return (
@@ -62,6 +63,10 @@ const UserScoreSimpleRadialBarChart = ({ data }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+UserScoreSimpleRadialBarChart.propTypes = {
+  data: PropTypes.number, 
 };
 
 export default UserScoreSimpleRadialBarChart;

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./page404.module.scss";
+import { DEFAULT_USER } from "../../config";
 
 const Page404 = () => {
   return (
@@ -14,7 +15,7 @@ const Page404 = () => {
         </p>
 
         {/* Lien vers la page de profil par défaut */}
-        <Link to="/profil/12" className={styles.page404__link}>
+        <Link to={`/profil/${DEFAULT_USER}`} className={styles.page404__link}>
           Retourner sur la page de profil par défaut
         </Link>
       </main>
