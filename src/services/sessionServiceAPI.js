@@ -1,4 +1,4 @@
-import { USE_MOCKS } from '../config';
+import { USE_MOCKS, BASE_URL } from '../config';
 
 export const fetchSessionData = async (userId) => {
 
@@ -15,7 +15,8 @@ export const fetchSessionData = async (userId) => {
     }
   }
 
-  const url = `http://localhost:3000/user/${userId}/average-sessions`;     // notre backend docker (ne pas oublier de le lancer ....)
+  //const url = `http://localhost:3000/user/${userId}/average-sessions`;     // notre backend docker (ne pas oublier de le lancer ....)
+  const url = `http://${BASE_URL}/user/${userId}/average-sessions`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

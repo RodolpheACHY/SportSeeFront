@@ -1,4 +1,4 @@
-import { USE_MOCKS } from '../config';
+import { USE_MOCKS, BASE_URL } from '../config';
 
 export const fetchPerformanceData = async (userId) => {
   
@@ -16,7 +16,8 @@ export const fetchPerformanceData = async (userId) => {
       }
     }
 
-  const url = `http://localhost:3000/user/${userId}/performance`;     // notre backend docker (ne pas oublier de le lancer ....)
+  //const url = `http://localhost:3000/user/${userId}/performance`;     // notre backend docker (ne pas oublier de le lancer ....)
+  const url = `http://${BASE_URL}/user/${userId}/performance`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

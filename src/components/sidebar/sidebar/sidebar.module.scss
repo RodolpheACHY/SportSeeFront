@@ -5,6 +5,8 @@
     flex-direction: column ;
     width: 117px;
     justify-content: center;
+    position: absolute;
+    top: 90px;
 
     &__icon-wrapper-Container {
         display: flex;
