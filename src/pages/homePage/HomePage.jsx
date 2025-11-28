@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
+import styles from "./homePage.module.scss";
 
 export default function Home() {
   return (
@@ -21,3 +21,4 @@ export default function Home() {
     </main>
   );
 }
+
