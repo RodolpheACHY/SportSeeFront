@@ -5,10 +5,10 @@
     padding: 4rem 2rem;
     text-align: center;
   }
-    
+  
   &__home-title {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: settings.$font-weight-bold;;
   }
     
   &__home-subtitle {
