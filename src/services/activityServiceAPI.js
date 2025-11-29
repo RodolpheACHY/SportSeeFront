@@ -1,7 +1,8 @@
-import { USE_MOCKS, BASE_URL } from '../config';
+import { USE_MOCKS, API_URL } from '../config';
 
 export const fetchActivityData = async (userId) => {
 
+  // ---- MODE MOCK ----
   if (USE_MOCKS) {
     try {
       // 🪄 Import dynamique basé sur l’ID utilisateur
@@ -10,13 +11,13 @@ export const fetchActivityData = async (userId) => {
         data: mockActivityData.sessions,
       };
     } catch (error) {
-      console.error("❌ Erreur lors de l'import des données mockées :", error);
+      console.error("❌ Erreur mock Activity :", error);
       return { data: [] };
     }
   }
 
-  //const url = `http://localhost:3000/user/${userId}/activity`;     // notre backend docker (ne pas oublier de le lancer ....)
-  const url = `http://${BASE_URL}/user/${userId}/activity`;
+  // ---- MODE API ----
+  const url = `http://${API_URL}/user/${userId}/activity`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -27,7 +28,7 @@ export const fetchActivityData = async (userId) => {
       data: apiData.data.sessions,
     };
   } catch (error) {
-    console.error("Erreur lors de la récupération des données de performance :", error);
+    console.error("Erreur API Activity :", error);
     return {
       data: [],
     };
