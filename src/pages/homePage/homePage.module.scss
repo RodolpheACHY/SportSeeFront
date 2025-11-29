@@ -1,23 +1,24 @@
 @use '../../styles/settings';
 
 .homePage {
-  &__home-container {
+  &__homeContainer {
     padding: 4rem 2rem;
     text-align: center;
   }
   
-  &__home-title {
+  &__homeTitle {
     font-size: 2.5rem;
     font-weight: settings.$font-weight-bold;;
   }
     
-  &__home-subtitle {
-    font-size: 1.2rem;
+  &__homeSubtitle {
+    /* font-size: 1.2rem; */
+    font-size: 1.5rem;
     margin-top: 0.5rem;
     color: #555;
   }
     
-  &__home-buttons {
+  &__homeButtons {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -25,7 +26,7 @@
     flex-wrap: wrap;
   }
     
-  &__home-btn {
+  &__homeBtn {
     padding: 1rem 2rem;
     background: #ff0000;
     color: white;
@@ -35,7 +36,8 @@
     transition: 0.2s;
 
     &:hover {
-      background: #cc0000;
+      background: #cc0000 !important;
+      filter: none !important; 
       transform: translateY(-3px);
     }
   }    
