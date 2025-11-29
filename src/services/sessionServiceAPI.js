@@ -1,22 +1,22 @@
-import { USE_MOCKS, BASE_URL } from '../config';
+import { USE_MOCKS, API_URL } from '../config';
 
 export const fetchSessionData = async (userId) => {
 
+  // ---- MODE MOCK ----
   if (USE_MOCKS) {
     try {
-      // 🪄 Import dynamique basé sur l’ID utilisateur
       const { data: mockSessionData } = await import(`../mockData/user/${userId}/average-sessions.json`);
       return {
         data: mockSessionData.sessions,
       };
     } catch (error) {
-      console.error("❌ Erreur lors de l'import des données mockées :", error);
+      console.error("❌ Erreur MOCK session :", error);
       return { data: [] };
     }
   }
 
-  //const url = `http://localhost:3000/user/${userId}/average-sessions`;     // notre backend docker (ne pas oublier de le lancer ....)
-  const url = `http://${BASE_URL}/user/${userId}/average-sessions`;
+  // ---- MODE API ----
+  const url = `http://${API_URL}/user/${userId}/average-sessions`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -27,7 +27,7 @@ export const fetchSessionData = async (userId) => {
       data: apiData.data.sessions,
     };
   } catch (error) {
-    console.error("Erreur lors de la récupération des données de performance :", error);
+    console.error("Erreur API session  :", error);
     return {
       data: [],
     };
