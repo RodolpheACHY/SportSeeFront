@@ -11,7 +11,7 @@ export const fetchPerformanceData = async (userId) => {
           kind: mockPerformanceData.kind,
         };
       } catch (error) {
-        console.error("❌ Erreur mock performance :", error);
+        console.error("❌ Erreur MOCK performance :", error);
         return { data: [] };
       }
     }

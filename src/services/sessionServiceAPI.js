@@ -27,7 +27,7 @@ export const fetchSessionData = async (userId) => {
       data: apiData.data.sessions,
     };
   } catch (error) {
-    console.error("Erreur API session  :", error);
+    console.error("❌Erreur API session  :", error);
     return {
       data: [],
     };

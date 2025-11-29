@@ -5,13 +5,12 @@ export const fetchActivityData = async (userId) => {
   // ---- MODE MOCK ----
   if (USE_MOCKS) {
     try {
-      // 🪄 Import dynamique basé sur l’ID utilisateur
       const { data: mockActivityData } = await import(`../mockData/user/${userId}/activity.json`);
       return {
         data: mockActivityData.sessions,
       };
     } catch (error) {
-      console.error("❌ Erreur mock Activity :", error);
+      console.error("❌ Erreur MOCK Activity :", error);
       return { data: [] };
     }
   }
