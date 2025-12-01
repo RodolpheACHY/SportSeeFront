@@ -16,7 +16,7 @@ export const fetchActivityData = async (userId) => {
   }
 
   // ---- MODE API ----
-  const url = `http://${API_URL}/user/${userId}/activity`;
+  const url = `${API_URL}/user/${userId}/activity`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

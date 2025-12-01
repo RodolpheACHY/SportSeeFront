@@ -16,7 +16,7 @@ export const fetchSessionData = async (userId) => {
   }
 
   // ---- MODE API ----
-  const url = `http://${API_URL}/user/${userId}/average-sessions`;
+  const url = `${API_URL}/user/${userId}/average-sessions`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

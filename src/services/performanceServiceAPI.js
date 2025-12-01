@@ -17,7 +17,7 @@ export const fetchPerformanceData = async (userId) => {
     }
 
   // ---- MODE API ----
-  const url = `http://${API_URL}/user/${userId}/performance`;
+  const url = `${API_URL}/user/${userId}/performance`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -29,7 +29,7 @@ export const fetchPerformanceData = async (userId) => {
       kind: apiData.data.kind,
     };
   } catch (error) {
-    console.error("Erreur API performance :", error);
+    console.error("❌ Erreur API performance :", error);
     return {
       data: [],
       kind: {},

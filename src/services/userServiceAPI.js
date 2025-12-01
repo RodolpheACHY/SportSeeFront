@@ -16,7 +16,7 @@ export const fetchUserData = async (userId) => {
   
 
    // ---- MODE API ----
-  const url = `http://${API_URL}/user/${userId}`;
+  const url = `${API_URL}/user/${userId}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
