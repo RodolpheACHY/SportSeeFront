@@ -87,7 +87,7 @@ cp .env.example .env.local
 ▶️ Mode Mock (par défaut)  
 VITE_USE_MOCKS=true
 
-▶️ Mode API
+▶️ Mode API  
 VITE_USE_MOCKS=false  
 VITE_API_URL=https://sportsee-backend-0iuz.onrender.com
 
