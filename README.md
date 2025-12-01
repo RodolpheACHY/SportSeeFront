@@ -75,7 +75,7 @@ L’application peut fonctionner selon **2 modes** :
 
 ---
 
-## 1️⃣ Créer le fichier `.env.local`
+1️⃣ Créer le fichier `.env.local`
 
 Depuis le modèle :
 
@@ -84,6 +84,7 @@ cp .env.example .env.local
 ```
 
 2️⃣ Choisir le mode de données
+
 ▶️ Mode Mock (par défaut)
 VITE_USE_MOCKS=true
 
