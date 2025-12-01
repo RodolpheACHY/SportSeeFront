@@ -131,7 +131,7 @@ L’application sera disponible sur :
 
 ## 📱 Responsive
 
-✔️ Optimisé pour bureau
+✔️ Optimisé pour bureau  
 ❌ Non prévu pour mobile (selon la maquette OpenClassrooms)
 
 ## 📊 Fonctionnalités
