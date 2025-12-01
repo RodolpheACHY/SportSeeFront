@@ -136,19 +136,19 @@ L’application sera disponible sur :
 
 ## 📊 Fonctionnalités
 
- - [x] :white_check_mark: Affichage du prénom + message personnalisé
+ - :white_check_mark: Affichage du prénom + message personnalisé
 
- - [x] Graphiques Recharts : activité, sessions, performance
+ - :white_check_mark: Graphiques Recharts : activité, sessions, performance
 
- - [x] Cartes nutritionnelles (calories, glucides, lipides…)
+ - :white_check_mark: Cartes nutritionnelles (calories, glucides, lipides…)
 
- - [x] Données dynamiques via API ou fichiers mock
+ - :white_check_mark: Données dynamiques via API ou fichiers mock
 
- - [x] Redirection vers page 404 si utilisateur invalide
+ - :white_check_mark: Redirection vers page 404 si utilisateur invalide
 
- - [x] Séparation claire des services Mock/API
+ - :white_check_mark: Séparation claire des services Mock/API
 
- - [x] Formatage des données selon les besoins des composants
+ - :white_check_mark: Formatage des données selon les besoins des composants
 
 ---
  
