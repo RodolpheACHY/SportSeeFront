@@ -1,23 +1,22 @@
-import { USE_MOCKS, BASE_URL } from '../config';
+import { USE_MOCKS, API_URL } from '../config';
 
 export const fetchUserData = async (userId) => {
- 
+  // ---- MODE MOCK ---- 
   if (USE_MOCKS) {
     try {
-      // 🪄 Import dynamique basé sur l’ID utilisateur
       const { data: mockUserData } = await import(`../mockData/user/${userId}/user.json`);
       return {
         data: mockUserData,
       };
     } catch (error) {
-      console.error("❌ Erreur lors de l'import des données mockées :", error);
+      console.error("❌ Erreur MOCK user :", error);
       return { data: [] };
     }
   }
   
 
-  //const url = `http://localhost:3000/user/${userId}`;  // notre backend docker (ne pas oublier de le lancer ....)
-  const url = `http://${BASE_URL}/user/${userId}`;
+   // ---- MODE API ----
+  const url = `${API_URL}/user/${userId}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -28,7 +27,7 @@ export const fetchUserData = async (userId) => {
       data: apiData.data,
     };
   } catch (error) {
-    console.error("Erreur lors de la récupération des données de user :", error);
+    console.error("❌ Erreur API user :", error);
     return {
       data: [],
     };
