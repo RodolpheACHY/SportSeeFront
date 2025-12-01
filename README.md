@@ -85,11 +85,11 @@ cp .env.example .env.local
 
 2️⃣ Choisir le mode de données
 
-▶️ Mode Mock (par défaut)
+▶️ Mode Mock (par défaut)  
 VITE_USE_MOCKS=true
 
 ▶️ Mode API
-VITE_USE_MOCKS=false
+VITE_USE_MOCKS=false  
 VITE_API_URL=https://sportsee-backend-0iuz.onrender.com
 
 ---
@@ -98,12 +98,9 @@ VITE_API_URL=https://sportsee-backend-0iuz.onrender.com
 
 Endpoints disponibles :
 
-- /user/:id  - Récupère les informations d'un utilisateur. Ce premier point de terminaison comprend l'identifiant utilisateur, ses informations (prénom, nom et âge), son score du jour (todayScore) et des données clés (calories, macronutriments, etc.).
-
+- /user/:id  - Récupère les informations d'un utilisateur.
 - /user/:id/activity - récupère l'activité d'un utilisateur jour par jour avec les kilogrammes et les calories.
-
 - /user/:id/average-sessions - Récupère la moyenne des sessions d'un utilisateur par jour. La semaine commence le lundi.
-
 - /user/:id/performance - Récupère les performances d'un utilisateur (énergie, endurance, etc.).
 
 **Attention, seuls deux utilisateurs ont été simulés pour le moment. Leurs identifiants sont respectivement 12 et 18.**
