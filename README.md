@@ -136,7 +136,7 @@ L’application sera disponible sur :
 
 ## 📊 Fonctionnalités
 
- - [x] Affichage du prénom + message personnalisé
+ - [x] :white_check_mark: Affichage du prénom + message personnalisé
 
  - [x] Graphiques Recharts : activité, sessions, performance
 
