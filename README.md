@@ -56,7 +56,6 @@ Le backend est déployé ici :
 ### Liens utiles
 
 - [Maquette figma](https://www.figma.com/design/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0-1)
-- [Backend](https://sportsee-backend-0iuz.onrender.com)
 - [Kanban](https://openclassrooms.notion.site/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e)
 
 ---
