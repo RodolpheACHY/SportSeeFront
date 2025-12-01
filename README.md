@@ -1,115 +1,175 @@
-# SportSee
+# 🏋️ SportSee – Tableau de bord d’analytics
 
-Projet 12 - de la formation Openclassrooms - Développeur d'applications JS/React -
+Projet 12 – Formation **Développeur d’Applications JavaScript / React** (OpenClassrooms)  
+Objectif : Créer un tableau de bord sportif permettant de visualiser l’activité d’un utilisateur via **React**, **Recharts** et une API dédiée.
 
-Objectif : Développez un tableau de bord d'analytics avec React
+---
 
-## Pré-requis
+## 🚀 Démo Backend (API)
 
-- [React+Vite](https://vitejs.fr/guide/)
-- [Recharts](https://recharts.org/en-US/guide)
-- [SASS](https://sass-lang.com/install/)
-- [Docker Desktop - optionnel](https://www.docker.com/products/docker-desktop)
-- [Yarn](https://sass-lang.com/install/) ou [npm](https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager)
-- [NodeJS (version 12.18) or higher (tested up to Node 20.0)](https://nodejs.org/en/)
+Le backend est déployé ici :
 
-## Structure du projet
+👉 https://sportsee-backend-0iuz.onrender.com
 
-📦 SportSeeFront  
-├── public/ # Fichiers statiques  
-├── src/  
-│ ├── assets/ # Images et icônes  
-│ ├── components/ # Composants réutilisables  
-│ ├── pages/ # Pages principales (Home, Profil, About, 404…)  
-│ ├── mockData/ # Données mockées pour chaque utilisateur  
-│ ├── formatters/ # Traitement des données pour les rendre au format attendu par le composant  
-│ ├── services/ # Appels API & mocks dynamiques  
-│ ├── dataLoaders/ # Fonctions de récupération des données via useEffect  
-│ ├── styles/ # Variables, mixins, reset CSS…  
-│ ├── App.jsx # Composant racine  
-│ ├── main.jsx # Point d'entrée React  
-│ ├── Router.jsx # Composant chargé du routage  
-│ └── config.js # Fichier de configuration  
-├── README.md # Présentation du projet, guide, et infos importantes pour prendre en main le projet  
-└── vite.config.js  # Fichier de configuration de Vite  
+ℹ️ Identifiants utilisateurs disponibles : **12** et **18**
+
+---
+
+## 📦 Structure du projet
 
 
-## Description
+```
+📦 SportSeeFront
+├── public/ # Fichiers statiques
+├── src/
+│ ├── assets/ # Images, icônes
+│ ├── components/ # Composants UI réutilisables
+│ ├── pages/ # Pages principales (Home, Profil, 404…)
+│ ├── mockData/ # Données mockées JSON
+│ ├── formatters/ # Transformation des données API
+│ ├── services/ # Appels API + services Mock dynamiques
+│ ├── dataLoaders/ # useEffect & fonctions de chargement
+│ ├── styles/ # SASS : variables, mixins, helpers
+│ ├── App.jsx # Composant racine
+│ ├── main.jsx # Point d'entrée React
+│ ├── Router.jsx # Gestion du routage
+│ └── config.js # Configuration (Mock/API)
+├── vite.config.js
+├── .env.example # Exemple de configuration
+└── README.md
+```
 
-Cette application va permettre aux utilisateurs de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
+---
+
+## 🛠️ Prérequis
+
+- Node.js ≥ 12.18 (recommandé : version LTS)
+- npm **ou** Yarn
+- Vite
+- Sass
+- Recharts
+- (Optionnel) Docker Desktop
+- Backend SportSee : https://sportsee-backend-0iuz.onrender.com
+
+---
 
 ### Liens utiles
 
 - [Maquette figma](https://www.figma.com/design/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0-1)
-- [Backend](https://github.com/OpenClassrooms-Student-Center/SportSee)
+- [Backend](https://sportsee-backend-0iuz.onrender.com)
 - [Kanban](https://openclassrooms.notion.site/Tableau-de-bord-SportSee-6686aa4b5f44417881a4884c9af5669e)
 
-### Installation
+---
 
-#### Configuration du fichier `config.js`
+## 🔧 Configuration des variables d’environnement (Mock ou API)
 
-Dans ce projet, on peut basculer entre les données simulées (mockées) et les données de l'API en fonction de la valeur de la variable USE_MOCKS dans le fichier config.js.
+L’application peut fonctionner selon **2 modes** :
 
-1. Créez un fichier config.js à la racine du dossier src avec cette variable : export const USE_MOCKS = false ;
+### ✔️ Mode Mock (données locales)  
+→ Ne nécessite pas l’API  
+→ Idéal pour travailler hors-ligne ou sans backend
 
-2. Choisir le mode de données à utiliser :
+### ✔️ Mode API (Backend Render)  
+→ Requiert une URL valide  
+→ Permet d’utiliser les vraies données renvoyées par l'API
 
-- Pour utiliser les données mockées, il faut spécifier cette variable à true 
+---
 
-- Pour utiliser les données provenant de l'API , il faut spécifier cette variable à false
+## 1️⃣ Créer le fichier `.env.local`
 
-#### Installer & Lancer le Backend
+Depuis le modèle :
 
-Suivre les intructions sur ce lien  : https://github.com/OpenClassrooms-Student-Center/SportSee
+```
+cp .env.example .env.local
+```
 
-#### Installer & Lancer le Frontend
+2️⃣ Choisir le mode de données
+▶️ Mode Mock (par défaut)
+VITE_USE_MOCKS=true
 
-```bash
+▶️ Mode API
+VITE_USE_MOCKS=false
+VITE_API_URL=https://sportsee-backend-0iuz.onrender.com
+
+---
+
+## 🔌 Fonctionnement du backend
+
+Endpoints disponibles :
+
+- /user/:id  - Récupère les informations d'un utilisateur. Ce premier point de terminaison comprend l'identifiant utilisateur, ses informations (prénom, nom et âge), son score du jour (todayScore) et des données clés (calories, macronutriments, etc.).
+
+- /user/:id/activity - récupère l'activité d'un utilisateur jour par jour avec les kilogrammes et les calories.
+
+- /user/:id/average-sessions - Récupère la moyenne des sessions d'un utilisateur par jour. La semaine commence le lundi.
+
+- /user/:id/performance - Récupère les performances d'un utilisateur (énergie, endurance, etc.).
+
+**Attention, seuls deux utilisateurs ont été simulés pour le moment. Leurs identifiants sont respectivement 12 et 18.**
+
+Exemples :
+
+```
+https://sportsee-backend-0iuz.onrender.com/user/12
+https://sportsee-backend-0iuz.onrender.com/user/18/activity
+```
+
+---
+
+## 🚀 Installation & Lancement du projet
+
+```
 git clone https://github.com/RodolpheACHY/SportSeeFront.git
-cd my-react-app
+cd SportSeeFront
 yarn
 yarn dev
 ```
 
-### Changer d'utilisateur via l'URL:
 
-- [User 12](http://localhost:5173/profil/12) - http://localhost:5173/profil/12  
-- [User 18](http://localhost:5173/profil/18) - http://localhost:5173/profil/18
+L’application sera disponible sur :
 
-### Responsive
+👉 http://localhost:5173
 
-Le projet est lisible à partir de 1024x768 
+---
 
-### Fontionnalités
+## 📱 Responsive
 
-- [x] Affichage du prénom et messages personnalisés
-- [x] Graphiques : activité, performance, sessions
-- [x] Données nutritionnelles : calories, protéines, etc.
-- [x] Récupération dynamique des données (API ou mock)
-- [x] Redirection automatique vers la page 404 si l’ID utilisateur n’existe pas
+✔️ Optimisé pour bureau
+❌ Non prévu pour mobile (selon la maquette OpenClassrooms)
 
-### Donnnées mockées dispos dans
+## 📊 Fonctionnalités
 
-SportSeeFront\src\mockData\user\\{id}\activity.json  
-SportSeeFront\src\mockData\user\\{id}\user.json  
-SportSeeFront\src\mockData\user\\{id}\average-sessions.json  
-SportSeeFront\src\mockData\user\\{id}\performance.json  
+ - [x] Affichage du prénom + message personnalisé
 
-### Endpoints
+ - [x] Graphiques Recharts : activité, sessions, performance
 
-- http://localhost:3000/user/${userId} - Récupère les informations d'un utilisateur. Ce premier point de terminaison comprend l'identifiant utilisateur, ses informations (prénom, nom et âge), son score du jour (todayScore) et des données clés (calories, macronutriments, etc.).
-- http://localhost:3000/user/${userId}/activity - récupère l'activité d'un utilisateur jour par jour avec les kilogrammes et les calories.
-- http://localhost:3000/user/${userId}/average-sessions - Récupère la moyenne des sessions d'un utilisateur par jour. La semaine commence le lundi.
-- http://localhost:3000/user/${userId}/performance - Récupère les performances d'un utilisateur (énergie, endurance, etc.).
+ - [x] Cartes nutritionnelles (calories, glucides, lipides…)
 
-**Attention, seuls deux utilisateurs ont été simulés pour le moment. Leurs identifiants sont respectivement 12 et 18.**
+ - [x] Données dynamiques via API ou fichiers mock
 
-### Exemples de requêtes
+ - [x] Redirection vers page 404 si utilisateur invalide
 
-- http://localhost:3000/user/12/performance - Récupère les performances de l'utilisateur avec l'id 12 
-- http://localhost:3000/user/18 - Récupère les informations principales du user 18.
+ - [x] Séparation claire des services Mock/API
+
+ - [x] Formatage des données selon les besoins des composants
+
+---
+ 
+## 📚 Données mockées (mode Mock)
+
+Les JSON se trouvent ici :
+
+```
+src/mockData/user/{id}/activity.json
+src/mockData/user/{id}/user.json
+src/mockData/user/{id}/average-sessions.json
+src/mockData/user/{id}/performance.json
+```
+
+---
 
 ### Auteur
 
 🎓 Projet réalisé dans le cadre d’une formation [OpenClassrooms](https://openclassrooms.com/).  
-💻 Codé avec ❤️ par **Rodolphe / RodolpheACHY**
+💻 Codé avec ❤️ par **Rodolphe ACHY**
+
